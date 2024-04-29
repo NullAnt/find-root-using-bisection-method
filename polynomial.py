@@ -10,14 +10,18 @@ class Polynomial():
 
     def get_coefficient_of(self,power):
         return self.coefficient[power]
+    
+    def solve_for(self,x:float):
+        ans = 0
+        for i in range(self.degree,-1,-1):
+            ans += self.coefficient[i]*(x**i)
+        return ans
 
         
     def show_equation(self):
         for i in range(self.degree,-1,-1):
             #print(i)
-            #to do: if negative make the sign negative
-            #       if power 0 write coefficient only
-
+            
             if self.coefficient[i] >= 0:
                 print(" + ", end="")
             else:
